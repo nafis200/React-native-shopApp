@@ -2,12 +2,13 @@
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-
 const ProductCard = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
       <Image source={require("../assets/girl2.png")} style={styles.coverImage} />
+      <Text style={styles.title}>Jackson Jeans</Text>
+      <Text style={styles.price}>$45</Text>
       </ScrollView>
     </SafeAreaView>
   )
@@ -25,5 +26,15 @@ const styles = StyleSheet.create({
     },
     container:{
         flex:1,
+    },
+    title:{
+        color:'black',
+        fontSize:18, 
+        fontWeight:'600'
+    },
+    price:{
+        fontSize:18,
+        color:"#9C9C9C",
+        fontWeight:'600'
     }
 })
