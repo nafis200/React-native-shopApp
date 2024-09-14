@@ -18,6 +18,8 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
    conatiner:{
       flex:1,
+      padding:20,
+  
    },
    texts:{
     color:'black'
