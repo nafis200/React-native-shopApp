@@ -7,12 +7,13 @@ import { StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/Header';
 import Category from '../components/Category';
+import ProductCard from '../components/ProductCard';
 // '#FDF0F3','#FFFBFC'
 
 const categories = ['Tranding Now','All','New','Mens','Womens']
 
 const HomeScreen = () => {
-   const [selectedCategory,setSelectedCategory] = useState(null)
+   const [selectedCategory,setSelectedCategory] = useState('All')
   return (
     <LinearGradient colors={['#FDF0F3','#FFFBFC']} style={styles.conatiner}>
        <Header/>
@@ -31,13 +32,16 @@ const HomeScreen = () => {
        showsHorizontalScrollIndicator={false}
        />
        {/* <Category/> */}
+       <View style={{flexDirection:'row',gap:10}}>
+         <ProductCard/>
+         <ProductCard/>
+       </View>
      </LinearGradient>
   )
 }
 
 const styles = StyleSheet.create({
    conatiner:{
-      flex:1,
       padding:20,
   
    },
