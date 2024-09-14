@@ -13,11 +13,14 @@ const HomeScreen = () => {
        <Header/>
        <Text style={styles.matchText}>Match Your Style</Text>
        <View style={styles.inputcontainer}>
-           <View>
+           <View style={styles.iconContainer}>
            <Fontisto name={"search"} size={26} color={"#C0C0C0"}
            />
            </View>
-           <TextInput style={styles.textinput}/>
+           <TextInput style={styles.textinput}
+           placeholder="Search"
+           placeholderTextColor="#C0C0C0"
+           />
        </View>
      </LinearGradient>
   )
@@ -43,10 +46,14 @@ const styles = StyleSheet.create({
       borderRadius:12,
       alignItems:'center',
       flexDirection:'row',
+      marginVertical:20
     },
     textinput:{
         flex:1,
-        borderWidth:1,
+        color:'black'
+    },
+    iconContainer:{
+       marginHorizontal:20,
     }
 })
 
