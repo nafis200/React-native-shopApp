@@ -3,11 +3,12 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeScreen from './src/screen/HomeScreen';
 const Tab = createBottomTabNavigator();
 
-const HomeScreen = ()=>{
-     <Text style={{color:'black'}}>Hellow</Text>
-}
+// const HomeScreen = ()=>{
+//      <Text style={{color:'black'}}>Hellow</Text>
+// }
 
 const App = () => {
   return (
