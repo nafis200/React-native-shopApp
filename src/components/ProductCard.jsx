@@ -7,10 +7,9 @@ const ProductCard = ({item,image,handleLiked}) => {
    
    return(
     <SafeAreaView style={styles.container}>
+      
       <ScrollView>
       <Image source={{uri: item.image}} style={styles.coverImage} />
-
-
       <View style={styles.content}>
       <Text style={styles.title}>{item.title}</Text>
       <Text style={styles.price}>${item.price}</Text>
@@ -28,8 +27,9 @@ const ProductCard = ({item,image,handleLiked}) => {
     <AntDesign name={"hearto"} size={20} color={"red"} />
   )}
 </Pressable>
-
       </ScrollView>
+
+      
     </SafeAreaView>
   )
 }

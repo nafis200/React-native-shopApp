@@ -1,4 +1,5 @@
 
+
 import { View, Text, TextInput, FlatList,ScrollView,SafeAreaView } from 'react-native'
 import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -32,7 +33,8 @@ const HomeScreen = () => {
    }
 
   return (
-    <SafeAreaView>
+    
+     <SafeAreaView>
       <ScrollView>
       <LinearGradient colors={['#FDF0F3','#FFFBFC']} style={styles.conatiner}>
        <Header/>
@@ -68,7 +70,8 @@ const HomeScreen = () => {
        </View> */}
      </LinearGradient>
       </ScrollView>
-    </SafeAreaView>
+     </SafeAreaView>
+
   )
 }
 
