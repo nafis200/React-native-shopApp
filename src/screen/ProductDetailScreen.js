@@ -1,6 +1,6 @@
 
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import Header from '../components/Header'
 const ImageUrl = "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/qichw3wrcioebkvzudib.png"
@@ -8,7 +8,9 @@ const ImageUrl = "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/
 const sizes = ["S","M","L","XL"]
 
 const ProductDetailScreen = () => {
-
+ 
+  const [selectedSize,setSelectedSize] = useState(null)
+  console.log(selectedSize)
   return (
     <LinearGradient colors={['#FDF0F3','#FFFBFC']} style={styles.container} >
        
@@ -29,8 +31,20 @@ const ProductDetailScreen = () => {
         {
             sizes.map((size,index)=>{
                 return(
-                    <TouchableOpacity style={styles.sizeValueContainer} key={index}>
-                        <Text style={[styles.title,styles.sizeValue]}>{size}</Text>
+                    <TouchableOpacity
+                     onPress={()=>{
+                        setSelectedSize(size)
+                     }}  style={styles.sizeValueContainer} key={index}>
+                        <Text 
+  style={[
+    styles.title, 
+    styles.sizeValue, 
+    selectedSize === size && { color: '#E55B5B' }
+  ]}
+>
+  {size}
+</Text>
+
                     </TouchableOpacity>
                 )
             })
