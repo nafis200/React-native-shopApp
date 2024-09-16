@@ -7,8 +7,10 @@ const ProductCard = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView>
       <Image source={require("../assets/girl2.png")} style={styles.coverImage} />
+      <View style={styles.content}>
       <Text style={styles.title}>Jackson Jeans</Text>
       <Text style={styles.price}>$45</Text>
+      </View>
       </ScrollView>
     </SafeAreaView>
   )
@@ -26,6 +28,7 @@ const styles = StyleSheet.create({
     },
     container:{
         flex:1,
+        marginTop:20
     },
     title:{
         color:'black',
@@ -36,5 +39,8 @@ const styles = StyleSheet.create({
         fontSize:18,
         color:"#9C9C9C",
         fontWeight:'600'
+    },
+    content:{
+        paddingLeft:15
     }
 })

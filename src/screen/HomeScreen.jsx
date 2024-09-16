@@ -1,5 +1,5 @@
 
-import { View, Text, TextInput, FlatList } from 'react-native'
+import { View, Text, TextInput, FlatList,ScrollView,SafeAreaView } from 'react-native'
 import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Fontisto from 'react-native-vector-icons/Fontisto'
@@ -15,7 +15,9 @@ const categories = ['Tranding Now','All','New','Mens','Womens']
 const HomeScreen = () => {
    const [selectedCategory,setSelectedCategory] = useState('All')
   return (
-    <LinearGradient colors={['#FDF0F3','#FFFBFC']} style={styles.conatiner}>
+    <SafeAreaView>
+      <ScrollView>
+      <LinearGradient colors={['#FDF0F3','#FFFBFC']} style={styles.conatiner}>
        <Header/>
        <Text style={styles.matchText}>Match Your Style</Text>
        <View style={styles.inputcontainer}>
@@ -36,7 +38,13 @@ const HomeScreen = () => {
          <ProductCard/>
          <ProductCard/>
        </View>
+       <View style={{flexDirection:'row',gap:10}}>
+         <ProductCard/>
+         <ProductCard/>
+       </View>
      </LinearGradient>
+      </ScrollView>
+    </SafeAreaView>
   )
 }
 
