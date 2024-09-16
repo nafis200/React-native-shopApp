@@ -9,7 +9,9 @@ const sizes = ["S", "M", "L", "XL"];
 
 const ProductDetailScreen = () => {
   const [selectedSize, setSelectedSize] = useState(null);
-  console.log(selectedSize);
+  const colorArray = [
+    "#FF5733","#33FF57","#3357FF","#F1C40F","#8E44AD","#2ECC71"
+  ]
   return (
     <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
       <View style={styles.HeaderContainer}>
@@ -65,7 +67,7 @@ const styles = StyleSheet.create({
   },
   coverimage: {
     width: "100%",
-    height: 420,
+    height: 220,
   },
   contentContainer: {
     flexDirection: "row",
