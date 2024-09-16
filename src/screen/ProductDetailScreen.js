@@ -58,7 +58,7 @@ const ProductDetailScreen = () => {
          {
             colorArray.map((item)=>{
               return(
-                <View> 
+                <View style={styles.circleBorder}> 
                    <View style={[styles.circle,{
                     backgroundColor:item
                    }]} />
@@ -132,5 +132,13 @@ const styles = StyleSheet.create({
      marginHorizontal:20,
      gap:10,
      marginVertical:10
+  },
+  circleBorder:{
+    borderWidth: 2,
+    height:40,
+    width:40,
+    borderRadius:24,
+    alignItems:"center",
+    justifyContent:"center",
   }
 });
