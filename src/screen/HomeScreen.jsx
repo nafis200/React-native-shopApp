@@ -35,7 +35,7 @@ const HomeScreen = () => {
   return (
     
      <SafeAreaView>
-      <ScrollView>
+      <View>
       <LinearGradient colors={['#FDF0F3','#FFFBFC']} style={styles.conatiner}>
        <Header/>
        <Text style={styles.matchText}>Match Your Style</Text>
@@ -50,7 +50,7 @@ const HomeScreen = () => {
            />
        </View>
        <FlatList data={categories} renderItem={({item}) => <Category item={item} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />} keyExtractor={(item)=>item}  horizontal={true}
-       showsHorizontalScrollIndicator={false}
+       showsHorizontalScrollIndicator={false} 
        />
        {/* <Category/> */}
        {/* <View style={{flexDirection:'row',gap:10}}>
@@ -69,7 +69,7 @@ const HomeScreen = () => {
          <ProductCard/>
        </View> */}
      </LinearGradient>
-      </ScrollView>
+      </View>
      </SafeAreaView>
 
   )

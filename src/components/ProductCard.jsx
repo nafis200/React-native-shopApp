@@ -1,13 +1,17 @@
 
-import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Image, Pressable, ScrollView, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import AntDesign from 'react-native-vector-icons/AntDesign'
+import { useNavigation } from '@react-navigation/native'
 const ProductCard = ({item,image,handleLiked}) => {
-   
+  
+  const navigation = useNavigation()
+
    return(
-    <SafeAreaView style={styles.container}>
-      
+    <TouchableOpacity onPress={()=>{
+       navigation.navigate("Products_detail")
+    }} style={styles.container}>
       <ScrollView>
       <Image source={{uri: item.image}} style={styles.coverImage} />
       <View style={styles.content}>
@@ -30,7 +34,7 @@ const ProductCard = ({item,image,handleLiked}) => {
       </ScrollView>
 
       
-    </SafeAreaView>
+    </TouchableOpacity>
   )
 }
 
