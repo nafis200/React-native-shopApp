@@ -40,16 +40,15 @@ const HomeScreen = () => {
        showsHorizontalScrollIndicator={false}
        />
        {/* <Category/> */}
-       <View style={{flexDirection:'row',gap:10}}>
+       {/* <View style={{flexDirection:'row',gap:10}}>
          <ProductCard/>
          <ProductCard/>
-       </View>
+       </View> */}
        <FlatList 
         numColumns={2} 
-        data={[1, 2, 3, 4, 5, 6]} 
-        renderItem={({ item,index }) => <ProductCard item={item} isLiked={isLiked} setIsLiked={setIsLiked} /> } 
-        contentContainerStyle={{ paddingHorizontal: 10 }}  
-        columnWrapperStyle={{ justifyContent: 'space-between' }} 
+        data={products} 
+        renderItem={({ item,index }) => <ProductCard item={item} image = {item.image} isLiked={isLiked}  /> } 
+        
 />
 
        {/* <View style={{flexDirection:'row',gap:10}}>

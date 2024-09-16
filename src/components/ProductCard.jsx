@@ -3,14 +3,17 @@ import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-nati
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import AntDesign from 'react-native-vector-icons/AntDesign'
-const ProductCard = ({isLiked,setIsLiked}) => {
+const ProductCard = ({item,image,isLiked}) => {
+   
    return(
     <SafeAreaView style={styles.container}>
       <ScrollView>
-      <Image source={require("../assets/girl2.png")} style={styles.coverImage} />
+      <Image source={{uri: image}} style={styles.coverImage} />
+
+
       <View style={styles.content}>
-      <Text style={styles.title}>Jackson Jeans</Text>
-      <Text style={styles.price}>$45</Text>
+      <Text style={styles.title}>{item.title}</Text>
+      <Text style={styles.price}>${item.price}</Text>
       </View>
       
       <Pressable
