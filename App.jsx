@@ -19,7 +19,9 @@ const Stack = createStackNavigator();
 
 const MyHomestack =()=>{
   return(
-    <Stack.Navigator>
+    <Stack.Navigator 
+    initialRouteName='Products_detail'
+    >
     <Stack.Screen name="HOME" component={HomeScreen} />
     <Stack.Screen name="Products_detail" component={ProductDetailScreen} />
   </Stack.Navigator>

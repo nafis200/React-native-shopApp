@@ -10,7 +10,7 @@ const ProductCard = ({item,image,handleLiked}) => {
 
    return(
     <TouchableOpacity onPress={()=>{
-       navigation.navigate("Products_detail")
+       navigation.navigate("Products_detail",{item})
     }} style={styles.container}>
       <ScrollView>
       <Image source={{uri: item.image}} style={styles.coverImage} />
