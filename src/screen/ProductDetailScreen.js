@@ -10,8 +10,15 @@ const sizes = ["S", "M", "L", "XL"];
 const ProductDetailScreen = () => {
   const [selectedSize, setSelectedSize] = useState(null);
   const colorArray = [
-    "#FF5733","#33FF57","#3357FF","#F1C40F","#8E44AD","#2ECC71"
-  ]
+    "#FF5733",
+    "#33FF57",
+    "#3357FF",
+    "#F1C40F",
+    "#8E44AD",
+    "#2ECC71",
+  ];
+
+  const [selectedColor, setSelectedColor] = useState(null);
 
   return (
     <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
@@ -51,24 +58,41 @@ const ProductDetailScreen = () => {
         </Text>
       </View>
 
-      <Text style={[styles.title, { color: "black"},styles.colorText]}>Colors</Text>
+      <Text style={[styles.title, { color: "black" }, styles.colorText]}>
+        Colors
+      </Text>
 
       <View style={styles.colorContainer}>
-           
-         {
-            colorArray.map((item)=>{
-              return(
-                <View style={styles.circleBorder}> 
-                   <View style={[styles.circle,{
-                    backgroundColor:item
-                   }]} />
-                </View>
-              )
-            }) 
-         }
-
+        {colorArray.map((item) => {
+          return (
+            <TouchableOpacity
+              onPress={() => {
+                setSelectedColor(item);
+              }}
+              style={styles.circleBorder}
+            >
+              <View
+                style={[
+                  styles.circle,
+                  {
+                    backgroundColor: item,
+                  },
+                  selectedColor === item && {
+                    borderColor: 'black',
+                    borderWidth: 2,
+                  },
+                ]}
+              />
+            </TouchableOpacity>
+          );
+        })}
       </View>
 
+      <TouchableOpacity style={styles.button}>
+      
+        <Text style={[{color:'black'},styles.buttonText]}>Add to cart</Text>
+
+      </TouchableOpacity>
 
     </LinearGradient>
   );
@@ -118,27 +142,39 @@ const styles = StyleSheet.create({
   sizeValue: {
     fontSize: 18,
   },
-  colorText:{
-    marginHorizontal:20,
-    marginTop:10
+  colorText: {
+    marginHorizontal: 20,
+    marginTop: 10,
   },
-  circle:{
-    height:36,
-    width:36,
-    borderRadius:18
+  circle: {
+    height: 36,
+    width: 36,
+    borderRadius: 18,
   },
-  colorContainer:{
-     flexDirection:'row',
-     marginHorizontal:20,
-     gap:10,
-     marginVertical:10
+  colorContainer: {
+    flexDirection: "row",
+    marginHorizontal: 20,
+    gap: 10,
+    marginVertical: 10,
   },
-  circleBorder:{
-    borderWidth: 2,
-    height:40,
-    width:40,
-    borderRadius:24,
-    alignItems:"center",
-    justifyContent:"center",
+  circleBorder: {
+    height: 40,
+    width: 40,
+    borderRadius: 24,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  buttonText:{
+     fontSize:24,
+     fontWeight:"600",
+     textAlign:'center',
+     color:'white'
+  },
+  button:{
+    backgroundColor:"#E96E6E",
+    padding:30,
+    borderRadius:30,
+    marginHorizontal:10,
+    marginVertical:5
   }
 });
