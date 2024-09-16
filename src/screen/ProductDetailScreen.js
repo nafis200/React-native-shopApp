@@ -12,6 +12,7 @@ const ProductDetailScreen = () => {
   const colorArray = [
     "#FF5733","#33FF57","#3357FF","#F1C40F","#8E44AD","#2ECC71"
   ]
+
   return (
     <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
       <View style={styles.HeaderContainer}>
@@ -51,6 +52,23 @@ const ProductDetailScreen = () => {
       </View>
 
       <Text style={[styles.title, { color: "black"},styles.colorText]}>Colors</Text>
+
+      <View style={styles.colorContainer}>
+           
+         {
+            colorArray.map((item)=>{
+              return(
+                <View> 
+                   <View style={[styles.circle,{
+                    backgroundColor:item
+                   }]} />
+                </View>
+              )
+            }) 
+         }
+
+      </View>
+
 
     </LinearGradient>
   );
@@ -103,5 +121,16 @@ const styles = StyleSheet.create({
   colorText:{
     marginHorizontal:20,
     marginTop:10
+  },
+  circle:{
+    height:36,
+    width:36,
+    borderRadius:18
+  },
+  colorContainer:{
+     flexDirection:'row',
+     marginHorizontal:20,
+     gap:10,
+     marginVertical:10
   }
 });
