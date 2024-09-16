@@ -8,12 +8,18 @@ import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/Header';
 import Category from '../components/Category';
 import ProductCard from '../components/ProductCard';
+import data from '../data/data.json'
 // '#FDF0F3','#FFFBFC'
 
 const categories = ['Tranding Now','All','New','Mens','Womens']
 
 const HomeScreen = () => {
+   const [products,setProducts] = useState(data.products)
+   
    const [selectedCategory,setSelectedCategory] = useState('All')
+
+   const [isLiked,setIsLiked] = useState(false)
+
   return (
     <SafeAreaView>
       <ScrollView>
@@ -38,10 +44,18 @@ const HomeScreen = () => {
          <ProductCard/>
          <ProductCard/>
        </View>
-       <View style={{flexDirection:'row',gap:10}}>
+       <FlatList 
+        numColumns={2} 
+        data={[1, 2, 3, 4, 5, 6]} 
+        renderItem={({ item,index }) => <ProductCard item={item} isLiked={isLiked} setIsLiked={setIsLiked} /> } 
+        contentContainerStyle={{ paddingHorizontal: 10 }}  
+        columnWrapperStyle={{ justifyContent: 'space-between' }} 
+/>
+
+       {/* <View style={{flexDirection:'row',gap:10}}>
          <ProductCard/>
          <ProductCard/>
-       </View>
+       </View> */}
      </LinearGradient>
       </ScrollView>
     </SafeAreaView>
