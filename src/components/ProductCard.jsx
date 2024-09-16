@@ -3,7 +3,7 @@ import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-nati
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import AntDesign from 'react-native-vector-icons/AntDesign'
-const ProductCard = ({item,image,isLiked}) => {
+const ProductCard = ({item,image,handleLiked}) => {
    
    return(
     <SafeAreaView style={styles.container}>
@@ -18,11 +18,11 @@ const ProductCard = ({item,image,isLiked}) => {
       
       <Pressable
   onPress={() => {
-     
+       handleLiked(item)
   }}
   style={styles.likeContainer}
 >
-  {isLiked ? (
+  {item?.isLiked ? (
     <AntDesign name={"heart"} size={20} color={"red"} />
   ) : (
     <AntDesign name={"hearto"} size={20} color={"red"} />

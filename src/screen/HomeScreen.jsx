@@ -18,7 +18,18 @@ const HomeScreen = () => {
    
    const [selectedCategory,setSelectedCategory] = useState('All')
 
-   const [isLiked,setIsLiked] = useState(false)
+   const handleLiked =(item)=>{
+      const newProducts = products.map((prod)=>{
+            if(prod.id === item.id){
+               return{
+                   ...prod,
+                   isLiked:true
+               }
+            }
+            return prod
+      })
+      setProducts(newProducts)
+   }
 
   return (
     <SafeAreaView>
@@ -47,7 +58,7 @@ const HomeScreen = () => {
        <FlatList 
         numColumns={2} 
         data={products} 
-        renderItem={({ item,index }) => <ProductCard item={item} image = {item.image} isLiked={isLiked}  /> } 
+        renderItem={({ item,index }) => <ProductCard item={item} image = {item.image} handleLiked={handleLiked}  /> } 
         
 />
 
