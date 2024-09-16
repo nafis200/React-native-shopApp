@@ -8,7 +8,7 @@ const ProductCard = ({item,image,isLiked}) => {
    return(
     <SafeAreaView style={styles.container}>
       <ScrollView>
-      <Image source={{uri: image}} style={styles.coverImage} />
+      <Image source={{uri: item.image}} style={styles.coverImage} />
 
 
       <View style={styles.content}>
