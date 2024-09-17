@@ -29,6 +29,12 @@ const Cartscreen = () => {
 
         </View>
         <View style={styles.divider} />
+          
+        <View style={styles.priceAndTitle}>  
+        <Text style={[{color:'black'},styles.text]}>Grand Total: </Text>
+        <Text style={[{color:'black',fontWeight:'700'},styles.text]}>$0.0: </Text>
+        </View>
+
     </LinearGradient>
   )
 }
