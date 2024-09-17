@@ -2,12 +2,19 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import LinearGradient from "react-native-linear-gradient";
 import Header from "../components/Header";
+import { useRoute } from "@react-navigation/native";
 const ImageUrl =
   "https://res.cloudinary.com/dlc5c1ycl/image/upload/v1710567612/qichw3wrcioebkvzudib.png";
 
 const sizes = ["S", "M", "L", "XL"];
 
 const ProductDetailScreen = () => {
+ 
+  const route = useRoute()
+
+  const item = route.params.item 
+  
+
   const [selectedSize, setSelectedSize] = useState(null);
   const colorArray = [
     "#FF5733",
@@ -19,7 +26,6 @@ const ProductDetailScreen = () => {
   ];
 
   const [selectedColor, setSelectedColor] = useState(null);
-
   return (
     <LinearGradient colors={["#FDF0F3", "#FFFBFC"]} style={styles.container}>
       <View style={styles.HeaderContainer}>
