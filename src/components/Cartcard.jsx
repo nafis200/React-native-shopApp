@@ -13,6 +13,14 @@ const Cartcard = () => {
       <View style={styles.cardContent}>       
       <Text style={[{color:'black'},styles.title]}>Jacket Jeans</Text>
       <Text style={[{color:'black'},styles.price]}>$39.5</Text>
+      <View style={styles.circleSizeContainer}>
+          <View style={styles.circle} />
+           
+           <View style={styles.sizeCircle}>
+                <Text style={{color:'black',fontSize:18}}>L</Text>
+           </View>
+
+      </View>
       </View>
       <Text style={{color:'black'}}>CartCard</Text>
       <FontAwesome6 name={"trash"} color={"#F68CB5"} size={25} />
@@ -32,7 +40,8 @@ const styles = StyleSheet.create({
          flexDirection:'row'
     },
     cardContent:{
-      flex: 1    
+      flex: 1,
+      marginHorizontal:10  
     },
     title:{
        fontSize: 18,
@@ -43,5 +52,24 @@ const styles = StyleSheet.create({
         color: "#797979",
         marginVertical:10,
         fontSize:18
+    },
+    circle:{
+        height: 32,
+        width: 32, 
+        borderRadius: 20, 
+        backgroundColor:'#7094C1'
+    },
+    circleSizeContainer:{
+        flexDirection: 'row',
+        
+    },
+    sizeCircle:{
+        backgroundColor:'white',
+        height:32,
+        width:32,
+        justifyContent:'center',
+        alignItems:'center',
+        borderRadius:20,
+        marginLeft:10
     }
 })
