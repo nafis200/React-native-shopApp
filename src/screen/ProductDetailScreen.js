@@ -31,11 +31,11 @@ const ProductDetailScreen = () => {
       <View style={styles.HeaderContainer}>
         <Header />
       </View>
-      <Image source={{ uri: ImageUrl }} style={styles.coverimage} />
+      <Image source={{ uri: item.image }} style={styles.coverimage} />
 
       <View style={styles.contentContainer}>
-        <Text style={[styles.title, { color: "black" }]}>Winter Coat</Text>
-        <Text style={[styles.price, { color: "black" }]}>$35.00</Text>
+        <Text style={[styles.title, { color: "black" }]}>{item.title}</Text>
+        <Text style={[styles.price, { color: "black" }]}>${item.price}</Text>
       </View>
 
       <View style={styles.sizeContainer}>
