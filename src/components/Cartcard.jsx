@@ -11,8 +11,8 @@ const Cartcard = () => {
       <Image style={styles.coverImage} source={{uri: ImageUrl}} />
       
       <View style={styles.cardContent}>       
-      <Text style={[{color:'black'}]}>Jacket Jeans</Text>
-      <Text style={[{color:'black'}]}>$39.5</Text>
+      <Text style={[{color:'black'},styles.title]}>Jacket Jeans</Text>
+      <Text style={[{color:'black'},styles.price]}>$39.5</Text>
       </View>
       <Text style={{color:'black'}}>CartCard</Text>
       <FontAwesome6 name={"trash"} color={"#F68CB5"} size={25} />
@@ -33,5 +33,15 @@ const styles = StyleSheet.create({
     },
     cardContent:{
       flex: 1    
+    },
+    title:{
+       fontSize: 18,
+       color:"#444444",
+       fontWeight:"500"
+    },
+    price:{
+        color: "#797979",
+        marginVertical:10,
+        fontSize:18
     }
 })
