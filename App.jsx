@@ -10,6 +10,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import { createStackNavigator } from '@react-navigation/stack';
 import ProductDetailScreen from './src/screen/ProductDetailScreen';
+import Cartscreen from './src/screen/Cartscreen';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -50,7 +51,7 @@ const App = () => {
              />
            }
         }}  />
-        <Tab.Screen name="Cart" component={HomeScreen}  options={{
+        <Tab.Screen name="Cart" component={Cartscreen}  options={{
            tabBarIcon: ({color,size,focused})=>{
              return <MaterialCommunityIcons name={"cart"} 
               color={color} size={size}
