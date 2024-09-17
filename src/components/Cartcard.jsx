@@ -20,8 +20,8 @@ const Cartcard = () => {
                 <Text style={{color:'black',fontSize:18}}>L</Text>
            </View>
 
-      </View>
-      </View>
+           </View>
+           </View>
       <TouchableOpacity>
       <FontAwesome6 name={"trash"} color={"#F68CB5"} size={25} />
       </TouchableOpacity>

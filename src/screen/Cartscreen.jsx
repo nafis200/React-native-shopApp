@@ -1,5 +1,5 @@
 
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import Header from '../components/Header'
@@ -13,27 +13,38 @@ const Cartscreen = () => {
         <Header isCart={true} />
         </View>
 
-        <Cartcard/>
-        <Cartcard/>
-        <View style={styles.priceContainer}>
+     
+         <FlatList data={[1,2,3,4,5,6]}
+         ListHeaderComponent={<>
 
-        <View style={styles.priceAndTitle}>
-        <Text style={[{color:'black'},styles.text]}>Total: </Text>
-        <Text style={[{color:'black'},styles.text]}>$119.7 </Text>
-        </View>
+         </>}
+         ListFooterComponent={
+            <>
+            
+            <View style={styles.priceContainer}>
 
-        <View style={styles.priceAndTitle}>  
-        <Text style={[{color:'black'},styles.text]}>Shipping: </Text>
-        <Text style={[{color:'black'},styles.text]}>$0.0: </Text>
-        </View>
+<View style={styles.priceAndTitle}>
+<Text style={[{color:'black'},styles.text]}>Total: </Text>
+<Text style={[{color:'black'},styles.text]}>$119.7 </Text>
+</View>
 
-        </View>
-        <View style={styles.divider} />
-          
-        <View style={styles.priceAndTitle}>  
-        <Text style={[{color:'black'},styles.text]}>Grand Total: </Text>
-        <Text style={[{color:'black',fontWeight:'700'},styles.text]}>$0.0: </Text>
-        </View>
+<View style={styles.priceAndTitle}>  
+<Text style={[{color:'black'},styles.text]}>Shipping: </Text>
+<Text style={[{color:'black'},styles.text]}>$0.0: </Text>
+</View>
+
+</View>
+<View style={styles.divider} />
+
+<View style={styles.priceAndTitle}>  
+<Text style={[{color:'black'},styles.text]}>Grand Total: </Text>
+<Text style={[{color:'black',fontWeight:'700'},styles.text]}>$0.0: </Text>
+</View>
+
+            </>
+         }
+         renderItem={Cartcard}>
+         </FlatList>
          
         <TouchableOpacity style={styles.checkoutContainer}>
             <Text style={[{color:'black'},styles.buttonText]}>Checkout</Text>
