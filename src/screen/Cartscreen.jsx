@@ -12,22 +12,23 @@ const Cartscreen = () => {
         <View style={styles.headerContainer}>
         <Header isCart={true} />
         </View>
+
         <Cartcard/>
         <Cartcard/>
-        <View>
-         
-        <View>
-        <Text style={{color:'black'}}>Total: </Text>
-        <Text style={{color:'black'}}>$119.7 </Text>
+        <View style={styles.priceContainer}>
+
+        <View style={styles.priceAndTitle}>
+        <Text style={[{color:'black'},styles.text]}>Total: </Text>
+        <Text style={[{color:'black'},styles.text]}>$119.7 </Text>
         </View>
 
-        <View>  
-        <Text style={{color:'black'}}>Shipping: </Text>
-        <Text style={{color:'black'}}>$0.0: </Text>
-
+        <View style={styles.priceAndTitle}>  
+        <Text style={[{color:'black'},styles.text]}>Shipping: </Text>
+        <Text style={[{color:'black'},styles.text]}>$0.0: </Text>
         </View>
 
         </View>
+        <View style={styles.divider} />
     </LinearGradient>
   )
 }
@@ -41,5 +42,22 @@ const styles = StyleSheet.create({
     },
     headerContainer:{
        marginBottom:20,
+    },
+    priceContainer:{
+        marginTop:30
+    },
+    priceAndTitle:{
+        flexDirection: "row",
+        justifyContent:'space-between',
+        marginHorizontal:20
+    },
+    text:{
+        fontSize:18,
+    },
+    divider:{
+        borderWidth: 2,
+        borderColor:"#C0C0C0",
+        marginTop:5,
+        marginBottom:5
     }
 })
