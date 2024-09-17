@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
         height: 32,
         width: 32, 
         borderRadius: 20, 
-        backgroundColor:'#7094C1'
+        backgroundColor:'#7094C1',
+        marginTop:20
     },
     circleSizeContainer:{
         flexDirection: 'row',

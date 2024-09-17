@@ -43,6 +43,9 @@ const Cartscreen = () => {
 
             </>
          }
+         contentContainerStyle={{
+            paddingBottom:100
+         }}
          renderItem={Cartcard}>
          </FlatList>
          
