@@ -7,7 +7,7 @@ import Header from '../components/Header'
 const Cartscreen = () => {
   return (
     <LinearGradient colors={['#FDF0F3','#FFFBFC']} style={styles.conatiner}>
-        <Header/>
+        <Header isCart={true} />
     </LinearGradient>
   )
 }
@@ -16,6 +16,7 @@ export default Cartscreen
 
 const styles = StyleSheet.create({
     conatiner:{
-        flex:1
+        flex:1,
+        padding: 15
     }
 })

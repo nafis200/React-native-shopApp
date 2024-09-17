@@ -1,13 +1,18 @@
 
 import { StyleSheet, Text, View,Image } from 'react-native'
 import React from 'react'
-
-const Header = () => {
+import Ionicons from 'react-native-vector-icons/Ionicons'
+const Header = ({isCart}) => {
   return (
     <View style={styles.container}>
     <View style={styles.appIconContainer}>
-    <Image source={require("../assets/apps.png")} style={styles.appIcon} />
+      {
+          isCart ? <Ionicons name={"chevron-back"} color={"red"} size={30} /> : <Image source={require("../assets/apps.png")} style={styles.appIcon} />
+      }
     </View>
+     {
+       isCart && <Text style={[{color:'black'},styles.mycart]}>My cart</Text>
+     }
      <Image source={require("../assets/Ellipse2.png")} style={styles.appIcon} />
     </View>
   )
@@ -34,5 +39,9 @@ const styles = StyleSheet.create({
         justifyContent:'space-between',
         alignItems:'center'
         
+    },
+    mycart:{
+       fontSize: 28,
+       
     }
 })
