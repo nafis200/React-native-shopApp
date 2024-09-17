@@ -13,6 +13,21 @@ const Cartscreen = () => {
         <Header isCart={true} />
         </View>
         <Cartcard/>
+        <Cartcard/>
+        <View>
+         
+        <View>
+        <Text style={{color:'black'}}>Total: </Text>
+        <Text style={{color:'black'}}>$119.7 </Text>
+        </View>
+
+        <View>  
+        <Text style={{color:'black'}}>Shipping: </Text>
+        <Text style={{color:'black'}}>$0.0: </Text>
+
+        </View>
+
+        </View>
     </LinearGradient>
   )
 }

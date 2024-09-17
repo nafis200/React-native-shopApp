@@ -1,6 +1,6 @@
 
 
-import { StyleSheet, Text, View,Image } from 'react-native'
+import { StyleSheet, Text, View,Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import FontAwesome6 from "react-native-vector-icons/FontAwesome6";
 const ImageUrl =
@@ -22,8 +22,9 @@ const Cartcard = () => {
 
       </View>
       </View>
-      <Text style={{color:'black'}}>CartCard</Text>
+      <TouchableOpacity>
       <FontAwesome6 name={"trash"} color={"#F68CB5"} size={25} />
+      </TouchableOpacity>
     </View>
   )
 }
