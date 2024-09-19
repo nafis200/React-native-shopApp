@@ -7,7 +7,7 @@ import Cartcard from '../components/Cartcard'
 import { cartContext } from '../context/Cartcontext'
 
 const Cartscreen = () => {
-    const {carts, totalPrice} = useContext(cartContext)
+    const {carts, totalPrice,deleteItemFromCart} = useContext(cartContext)
   return (
     <LinearGradient colors={['#FDF0F3','#FFFBFC']} style={styles.conatiner}>
 
@@ -17,8 +17,7 @@ const Cartscreen = () => {
 
      
          <FlatList data={carts}
-         ListHeaderComponent={<>
-
+          ListHeaderComponent={<>
          </>}
          ListFooterComponent={
             <>
@@ -48,7 +47,7 @@ const Cartscreen = () => {
          contentContainerStyle={{
             paddingBottom:100
          }}
-         renderItem={Cartcard}>
+         renderItem={({item})=><Cartcard item={item} deleteItemFromCart={deleteItemFromCart}></Cartcard>}>
          </FlatList>
          
         <TouchableOpacity style={styles.checkoutContainer}>

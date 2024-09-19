@@ -51,6 +51,7 @@ const HomeScreen = () => {
        </View>
        <FlatList data={categories} renderItem={({item}) => <Category item={item} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />} keyExtractor={(item)=>item}  horizontal={true}
        showsHorizontalScrollIndicator={false} 
+       keyExtractor={(item)=>item.id}
        />
        {/* <Category/> */}
        {/* <View style={{flexDirection:'row',gap:10}}>

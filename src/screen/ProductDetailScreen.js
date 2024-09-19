@@ -78,9 +78,10 @@ const ProductDetailScreen = () => {
       </Text>
 
       <View style={styles.colorContainer}>
-        {colorArray.map((item) => {
+        {colorArray.map((item,index) => {
           return (
-            <TouchableOpacity
+            <TouchableOpacity 
+              key ={index}
               onPress={() => {
                 setSelectedColor(item);
               }}
