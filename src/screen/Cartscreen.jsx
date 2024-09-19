@@ -7,7 +7,7 @@ import Cartcard from '../components/Cartcard'
 import { cartContext } from '../context/Cartcontext'
 
 const Cartscreen = () => {
-    const {carts} = useContext(cartContext)
+    const {carts, totalPrice} = useContext(cartContext)
   return (
     <LinearGradient colors={['#FDF0F3','#FFFBFC']} style={styles.conatiner}>
 
@@ -27,7 +27,7 @@ const Cartscreen = () => {
 
 <View style={styles.priceAndTitle}>
 <Text style={[{color:'black'},styles.text]}>Total: </Text>
-<Text style={[{color:'black'},styles.text]}>$119.7 </Text>
+<Text style={[{color:'black'},styles.text]}>${totalPrice} </Text>
 </View>
 
 <View style={styles.priceAndTitle}>  
@@ -40,7 +40,7 @@ const Cartscreen = () => {
 
 <View style={styles.priceAndTitle}>  
 <Text style={[{color:'black'},styles.text]}>Grand Total: </Text>
-<Text style={[{color:'black',fontWeight:'700'},styles.text]}>$0.0: </Text>
+<Text style={[{color:'black',fontWeight:'700'},styles.text]}>${totalPrice}</Text>
 </View>
 
             </>
