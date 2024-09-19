@@ -71,10 +71,10 @@ const App = () => {
               justifyContent:'center',
               alignItems:'center',
               position:'absolute',
-              top:0,
-              right:0
+              top:-10,
+              right:-5
              }}>
-               <Text style={{color:'black'}}>{carts?.length}</Text>
+               <Text style={{color:'white'}}>{carts?.length}</Text>
              </View>
               </View>
              )
