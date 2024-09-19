@@ -11,6 +11,7 @@ import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import { createStackNavigator } from '@react-navigation/stack';
 import ProductDetailScreen from './src/screen/ProductDetailScreen';
 import Cartscreen from './src/screen/Cartscreen';
+import { CartProvider } from './src/context/Cartcontext';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -31,7 +32,8 @@ const MyHomestack =()=>{
 
 const App = () => {
   return (
-    <NavigationContainer>
+    <CartProvider>
+      <NavigationContainer>
       <Tab.Navigator screenOptions={{
     headerShown: false,
     // tabBarShowLabel:false
@@ -44,7 +46,7 @@ const App = () => {
              />
            }
         }} />
-        <Tab.Screen name="Reorder" component={HomeScreen}  options={{
+           <Tab.Screen name="Reorder" component={HomeScreen}  options={{
            tabBarIcon: ({color,size,focused})=>{
              return <MaterialIcons name={"reorder"} 
               color={color} size={size}
@@ -58,6 +60,7 @@ const App = () => {
              />
            }
         }}  />
+
         <Tab.Screen name="Account" component={HomeScreen} options={{
            tabBarIcon:({color,size,focused})=>{
               return <FontAwesome6 name={'user'} color={color} size={size} />
@@ -65,8 +68,8 @@ const App = () => {
         }} />
     
       </Tab.Navigator>
-
     </NavigationContainer>
+    </CartProvider>
   )
 }
 
