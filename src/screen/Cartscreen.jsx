@@ -1,11 +1,13 @@
 
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import Header from '../components/Header'
 import Cartcard from '../components/Cartcard'
+import { cartContext } from '../context/Cartcontext'
 
 const Cartscreen = () => {
+    const {carts} = useContext(cartContext)
   return (
     <LinearGradient colors={['#FDF0F3','#FFFBFC']} style={styles.conatiner}>
 
@@ -14,7 +16,7 @@ const Cartscreen = () => {
         </View>
 
      
-         <FlatList data={[1,2,3,4,5,6]}
+         <FlatList data={carts}
          ListHeaderComponent={<>
 
          </>}

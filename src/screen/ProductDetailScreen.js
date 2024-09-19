@@ -73,8 +73,8 @@ const ProductDetailScreen = () => {
         </Text>
       </View>
 
-      <Text style={[styles.title, { color: "black" }, styles.colorText]}>
-        Colors
+      <Text style={[styles.title, { color: "black" },styles.colorText]}>
+        {item.size}
       </Text>
 
       <View style={styles.colorContainer}>
