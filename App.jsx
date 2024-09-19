@@ -1,6 +1,6 @@
 
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './src/screen/HomeScreen';
@@ -11,7 +11,7 @@ import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import { createStackNavigator } from '@react-navigation/stack';
 import ProductDetailScreen from './src/screen/ProductDetailScreen';
 import Cartscreen from './src/screen/Cartscreen';
-import { CartProvider } from './src/context/Cartcontext';
+import { cartContext, CartProvider } from './src/context/Cartcontext';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -55,9 +55,14 @@ const App = () => {
         }}  />
         <Tab.Screen name="Cart" component={Cartscreen}  options={{
            tabBarIcon: ({color,size,focused})=>{
-             return <MaterialCommunityIcons name={"cart"} 
+            const {carts} = useContext(cartContext)
+             return (
+                 <>
+              <MaterialCommunityIcons name={"cart"} 
               color={color} size={size}
              />
+                 </>
+             )
            }
         }}  />
 
