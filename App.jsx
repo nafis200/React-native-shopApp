@@ -57,11 +57,26 @@ const App = () => {
            tabBarIcon: ({color,size,focused})=>{
             const {carts} = useContext(cartContext)
              return (
-                 <>
+               <View style={{
+                 position:'relative'
+               }}>
               <MaterialCommunityIcons name={"cart"} 
               color={color} size={size}
              />
-                 </>
+             <View style={{
+              height:18,
+              width:14,
+              borderRadius:7,
+              backgroundColor:'red',
+              justifyContent:'center',
+              alignItems:'center',
+              position:'absolute',
+              top:0,
+              right:0
+             }}>
+               <Text style={{color:'black'}}>{carts?.length}</Text>
+             </View>
+              </View>
              )
            }
         }}  />
